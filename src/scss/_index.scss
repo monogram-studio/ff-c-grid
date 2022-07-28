@@ -29,7 +29,7 @@ $grid-columns: 12;
   @include bp($key) {
     @for $i from 1 through $grid-columns {
       .col--#{$key}-#{$i} {
-        width: round((math.div($i, $grid-columns) * 100%) * 1000) / 1000;
+        width: math.div(round((math.div($i, $grid-columns) * 100%) * 100), 100);
       }
     }
   }
