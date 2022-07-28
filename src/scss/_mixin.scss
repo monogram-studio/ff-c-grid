@@ -1,0 +1,18 @@
+$breakpoints: (
+    xs: 1px,
+    sm: 768px,
+    md: 1024px,
+    lg: 1440px,
+    xl: 1664px,
+    2xl: 1920px,
+) !default;
+
+@mixin bp($size) {
+  @if $size == xs {
+    @content;
+  } @else {
+    @media (min-width: map-get($breakpoints, $size)) {
+      @content;
+    }
+  }
+}
